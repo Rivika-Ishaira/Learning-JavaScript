@@ -62,3 +62,34 @@ function three() {
 }
 three();
 console.log(globalVariable);
+
+// Redeclaration and Reassignment
+var one = 10;
+var one = 20; // Redeclaration, Only possible with var.
+let twoo = 30;
+twoo = 40; // Reassignment, not possible with const.
+
+// Temporal Dead Zone
+console.log(e);
+// Error should be: 'e' is not defined.
+// Actual error: Cannot access 'e' before initialization.
+let e = 10;
+
+// Question is how it knows 'e' exist before initialization?
+// Ans -> TDz -> Area in which js knows the existense of the variable but can't access it.
+// TDZ of e ==> line no. 1 t0 75
+// var doesn't have TDZ.
+
+console.log(f); // undefined -> Due to hoisting
+
+var f = 12;
+
+// Hoisting impact per time
+// Hoisting -> Hoisting is JavaScript’s behavior where declarations (not values) are moved to the top of their scope before the code runs.
+
+var g = 10;
+// It breaks into:
+// 1. var g = undefined
+// 2. var g = 12;
+
+// Hoisting is present in all three(var, let, const).
